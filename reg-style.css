@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
 .reg-page-header{
-  font-family: nasalization, "Helvetica Neue";
+  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Quicksand', sans-serif;
     color: #efe;
     margin-top: 100px;
     text-align: center;
@@ -10,7 +12,8 @@
 
 #reg-page {
   margin: auto;
-  font-family: nasalization, "Helvetica Neue";
+  font-family: 'Chakra Petch', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   display: flex;
   width: 80%;
   justify-content: center;
@@ -23,24 +26,30 @@
 
 }
 
+
   #reg-page .container {
     position: relative;
-    padding: 50px;
-    width: 100%;
+    padding-left: 50px;
+    height:40vw;
+    width: 60vw;
     min-height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba( 5, 67, 136, 0.85 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
+    background: rgba(255,255,255,0.1);
+   
+
+    box-shadow:20px 20px 50px rgba( 0,0,0,0.5 );
+    backdrop-filter: blur( 5px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 20px;
+    
+    border: 1px solid rgba( 255, 255, 255, 0.5 );
     margin-bottom: 2%;
   }
 
-  #reg-page .container::after {
+
+  /* #reg-page .container::after {
     content: '';
     position: absolute;
     top: 5px;
@@ -51,7 +60,7 @@
     pointer-events: none;
     background: linear-gradient( to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%
     );
-  }
+  } */
 
   #reg-page .form {
     position: relative;
@@ -101,10 +110,10 @@
 
  #reg-page .reg-btn {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     height: 40px;
     width: 125px;
-    margin: 50px 0;
+    margin: 20px 0;
     background: rgba( 5, 67, 136, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
@@ -194,7 +203,8 @@
     color: #efe;
   }
   .reg-page-header{
-    font-family: nasalization, "Helvetica Neue"; 
+    font-family: 'Chakra Petch', sans-serif;
+font-family: 'Quicksand', sans-serif; 
     font-weight: 600; 
     font-size: 50px;
     padding-bottom: 50px;
@@ -254,6 +264,7 @@
     
     #reg-page .inputBx label{
       font-size: 12px;
+    
     }
 
     #reg-page .selectBx select{ 
@@ -263,5 +274,36 @@
     #reg-page .selectBx option{
       font-size: 12px;
     }
-
 }
+
+.sidebar{
+  background: rgb(0 0 0 / 61%);
+ width: 190px;
+
+ font-family: 'Chakra Petch', sans-serif;
+ height:100vh;
+ 
+}
+.sidebar nav{
+ padding: 45px;
+}
+
+.sidebar nav li{
+ list-style: none;
+ font-size: 30px;
+ padding: 33px 0;
+}
+.sidebar nav li a{
+ text-decoration: none;
+ color: white;
+}
+.sidebar nav li a:hover{
+ color:rgb(195, 159, 159);
+ font-size:1.9rem
+ 
+}
+
+.devPic{
+  height: 700px;
+}
+
