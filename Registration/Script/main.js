@@ -44,7 +44,7 @@ if (validateTeamName(teamName)) {
   //  numberPlayers=allValue[2];
    console.log(allValue)
 
-   window.location.href = "../page2//page2.html";
+   window.location.href = "page2.html";
 } else {
   document.getElementById('err-msg1').style.display="block"
   teamNameInput.value=""
