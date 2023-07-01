@@ -214,6 +214,8 @@ html{
   position: relative;
     list-style: none;
     font-size: 24px;
+    font-weight: 600;
+    padding: 30px 0;
    }
    .sidebar  li a{
     width: 100%;
@@ -228,7 +230,9 @@ html{
    .sidebar li a:hover, .active{
     color:black;
     /* font-size:1.9rem; */
-    background-color: #9b9b9b;
+    background-color: #6f1b72;
+   
+   
 
     
 }
