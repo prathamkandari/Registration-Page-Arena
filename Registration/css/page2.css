@@ -78,6 +78,7 @@ html{
 position: relative;
   list-style: none;
   font-size: 24px;
+  font-weight: 600;
   padding: 30px 0;
 
   
@@ -92,9 +93,10 @@ position: relative;
  }
 
  .sidebar li a:hover, .active{
-  color:black;
+ 
   /* font-size:1.9rem; */
-  background-color: #9b9b9b;
+  background-color: #f2aa00;
+  color:black;
  
  
 
