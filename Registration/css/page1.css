@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
 #err-msg1{
   display: none;
 }
@@ -192,20 +194,47 @@ html{
    .sidebar{
     /* border-top-right-radius: 10px;
     border-bottom-right-radius: 10px; */
-    width: 350px;
-    height: 100vh;
+    position:sticky;
+    top:0;
+    bottom:0;
+    left:0;
+   
+    width: 345px;
+    height: 90vh;
+    border-radius: 20px;
+    
     background: rgb(0 0 0 / 61%);
+    font-family: 'Chakra Petch', sans-serif;
+    overflow: hidden;
+    padding:0;
+    
    }
 
    .sidebar  li{
+  position: relative;
     list-style: none;
-    font-size: 30px;
+    font-size: 24px;
     padding: 30px 0;
    }
    .sidebar  li a{
     text-decoration: none;
     color: white;
+    padding:1rem;
+    border-radius: 8px;
+    margin: 8px 0;
    }
+
+   .sidebar li a:hover, .active{
+    color:black;
+    /* font-size:1.9rem; */
+    background-color: #9b9b9b;
+   
+   
+
+    
+}
+
+
 @media (max-width:1200px) {
   .valo{
     right:-260px
