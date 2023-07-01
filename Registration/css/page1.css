@@ -214,9 +214,10 @@ html{
   position: relative;
     list-style: none;
     font-size: 24px;
-    padding: 30px 0;
    }
    .sidebar  li a{
+    width: 100%;
+    display: block;
     text-decoration: none;
     color: white;
     padding:1rem;
@@ -228,8 +229,6 @@ html{
     color:black;
     /* font-size:1.9rem; */
     background-color: #9b9b9b;
-   
-   
 
     
 }
