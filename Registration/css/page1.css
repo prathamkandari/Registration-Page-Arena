@@ -3,6 +3,7 @@
 #err-msg1{
   display: none;
 }
+
 .form-check-input:checked{
   background-color: rgba(255,70,86,1) !important;
   border-color: #FF4655 !important;
