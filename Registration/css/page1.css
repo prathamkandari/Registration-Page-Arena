@@ -198,6 +198,7 @@ html{
     top:0;
     bottom:0;
     left:0;
+
    
     width: 345px;
     height: 100%;
@@ -238,7 +239,23 @@ html{
     
 }
 
+.sidebar img {
+  width:90px;
+padding:5px 10px 1px 10px; 
 
+  position: relative;
+  top:-130%;
+  /* left:-10%; */
+  align-items: center;
+  
+}
+
+.sidebar img:hover{
+ /* text-shadow: white;
+ drop-shadow(offset-x offset-y blur-radius color); */
+ 
+ filter: drop-shadow(-1px -10px 15px #FF4655);
+}
 @media (max-width:1200px) {
   .valo{
     right:-260px
