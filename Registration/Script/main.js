@@ -1,6 +1,5 @@
 /* Page1 */
 let teamName=NULL;
-let numberPlayers=5;
 function displayRadioValue() {
     return document.querySelector('input[name="inlineRadioOptions"]:checked').value;
 }
@@ -41,10 +40,13 @@ if (validateTeamName(teamName)) {
    allValue[0]=displayRadioValue()
    allValue[1]=teamName
    allValue[2]=document.querySelector('input[name="inlineRadioOptions1"]:checked').value
-  //  numberPlayers=allValue[2];
+   localStorage.setItem("game",allValue[0] );
+    localStorage.setItem("teamName", allValue[1]);  
+    localStorage.setItem("numberMembers", allValue[2]);  
    console.log(allValue)
-
+  
    window.location.href = "page2.html";
+  
 } else {
   document.getElementById('err-msg1').style.display="block"
   teamNameInput.value=""
@@ -53,10 +55,59 @@ if (validateTeamName(teamName)) {
 
 
 /* Page2 */
-function addData(numberPlayers){
-  console.log("hh")
-for(let i=0;i<numberPlayers;i++){
+function addData(){
+  
+let numberPlayers = localStorage.getItem('numberMembers');
+  console.log(numberPlayers)
+let game=localStorage.getItem('game')
+document.getElementById("my-box-bg").innerHTML+=`<form action="">
+<div class="row two-space mb-4 name-em">
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader Name</span>
+  </div>
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader Email</span>
+  </div>
+</div>
+<div class="row two-space mb-4 name-em">
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader ${game} ID</span>
+  </div>
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader ${game} Rank</span>
+  </div>
+</div>
+<div class="row two-space ">
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader Contact</span>
+  </div>
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Team Leader Sap Id</span>
+    <p class="msg" style="color: #f2aa00; font-size: small;">Enter 0 if you are not from UPES</p>
+  </div>
+</div>
+<div class="mb-4 w-100">
+  <div class="inputBox">
+    <input required="" type="text" required="" class="w-100">
+    <span class="text">Team Leader college Name</span>
+  </div>
+</div>
+<div class="mb-5 w-100">
+  <div class="inputBox">
+    <input required="" type="text" required="" class="w-100">
+    <span class="text">Team Leader Discord ID</span>
+  </div>
+</div>
+</form>`
+for(let i=0;i<numberPlayers-1;i++){
   console.log("dhdgd")
+
 document.getElementById("my-box-bg").innerHTML+=`<form action="">
 <div class="row two-space mb-4 name-em">
   <div class="inputBox">
@@ -66,6 +117,16 @@ document.getElementById("my-box-bg").innerHTML+=`<form action="">
   <div class="inputBox">
     <input required="" type="text" required="">
     <span class="text">Member  ${i+1} email</span>
+  </div>
+</div>
+<div class="row two-space mb-4 name-em">
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Member ${i+1} ${game} ID</span>
+  </div>
+  <div class="inputBox">
+    <input required="" type="text" required="">
+    <span class="text">Member  ${i+1} ${game} Rank</span>
   </div>
 </div>
 <div class="row two-space ">
@@ -86,5 +147,42 @@ document.getElementById("my-box-bg").innerHTML+=`<form action="">
   </div>
 </div>
 </form>`
+}
+}
+
+
+
+
+
+/* page3 */
+function displayPayment() {
+  return document.querySelector('input[name="paymentOptions"]:checked').value;
+}
+function showQR(payment){
+  if(payment==="Paytm")
+  {
+      document.getElementById('modal-img').innerHTML='<h1>PayTM</h1><img src="../images/Paytm1.jpg" />'
+  }
+  else
+  if(payment==="Phonepe")
+  {
+      document.getElementById('modal-img').innerHTML='<h1>PhonePe</h1><img src="../images/PhonePe1.jpeg" />'
+  }
+  else
+  {
+      document.getElementById('modal-img').innerHTML='<h1>Google Pay</h1><img src="../images/gpay1.jpeg" />'
+  }
+}
+
+
+function billShow(){
+let game=localStorage.getItem('game');
+if(game==="BGMI")
+{
+  document.getElementById("bill").innerHTML="Total Amount: ₹120"
+}
+else
+{
+  document.getElementById("bill").innerHTML="Total Amount: ₹160"
 }
 }

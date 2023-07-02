@@ -58,9 +58,9 @@
     <div class="container p-5 h-100 extra-padding d-flex flex-column align-items-center justify-content-center"
       style="height: 100vh;">
       <div class="glass-box d-flex flex-column align-items-center" style="width: 80%;">
-        <div class=" mb-5" style="text-align: center;">
+        <div class=" mb-3" style="text-align: center;">
           <h1 class="mt-4 title" style="color: white; font-size: 50px;">Transaction</h1>
-          <h6 style="color: red;" class="err-msg">Please Fill Empty Details</h6>
+          <h2 style="color: white;" id="bill"></h2>
         </div>
 
         <form class="px-md-4 mb-4 my-box">
@@ -128,6 +128,7 @@
   <script>
     window.onload = function () {
       showQR("Paytm")
+      billShow();
     };
     'use strict';
 
@@ -187,7 +188,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-<script src="../Script/page3.js"></script>
+<script src="../Script/main.js"></script>
   <script src="assets/js/jquery-3.3.1.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
