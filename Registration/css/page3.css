@@ -512,3 +512,18 @@ width: 500px;
    .popup button:hover{
     box-shadow: inset 0px 0px 25px #1479EA;
    }
+
+   .fa-solid{
+    display: none !important;
+  }
+  @media (max-width:992px) {
+    .fa-solid{
+    color: #1479EA;
+    display: block !important;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    font-size: 45px !important;
+    z-index: 100;
+    }
+  }
