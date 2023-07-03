@@ -179,10 +179,10 @@ function billShow(){
 let game=localStorage.getItem('game');
 if(game==="BGMI")
 {
-  document.getElementById("bill").innerHTML="Total Amount: ₹120"
+  document.getElementById("bill").innerHTML="Total Amount: <del>₹200</del>   ₹120"
 }
 else
 {
-  document.getElementById("bill").innerHTML="Total Amount: ₹160"
+  document.getElementById("bill").innerHTML="Total Amount: <del>₹200</del>   ₹160"
 }
 }
