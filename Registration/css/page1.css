@@ -323,16 +323,3 @@ padding:5px 10px 1px 10px;
   }
    }
 
-
-.csi-logo{
-  display: none;
-}
-@media (max-width:992px) {
-  .csi-logo{
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100px;
-  }
-}
