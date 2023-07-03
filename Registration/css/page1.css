@@ -305,3 +305,17 @@ html{
     background: url('../images/1282513mob.jpg') !important;
   }
    }
+
+
+.csi-logo{
+  display: none;
+}
+@media (max-width:992px) {
+  .csi-logo{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+  }
+}
