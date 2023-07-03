@@ -348,3 +348,17 @@ background-size: cover !important;
  }
 
 
+ .fa-solid{
+  display: none !important;
+}
+@media (max-width:992px) {
+  .fa-solid{
+  color: #f2aa00;
+  display: block !important;
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  font-size: 45px !important;
+  z-index: 100;
+  }
+}
