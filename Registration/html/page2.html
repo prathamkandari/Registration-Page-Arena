@@ -2,6 +2,21 @@
 <html lang="en">
 
 <head>
+  <script>
+    function validateForm() {
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+          // Show error message
+          var errorMessage = document.getElementsByClassName("err-msg")[0];
+          errorMessage.style.display = "block";
+          return false;
+        }
+      }
+      return true; // All fields are filled
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="ThemeStarz">
@@ -40,7 +55,7 @@
           <i class='bx bxs-dice-4' ></i>
           <span class="text">Team Details</span>
         </a></li>
-        <li><a href="page3.html">
+        <li><a href="page3.html" onclick="return validateForm();">
           <i class='bx bxs-wallet' ></i>
           <span class="text">Transaction</span>
         </a></li>
@@ -53,7 +68,7 @@
           <h1 class="mt-4 title" style=" font-size: 50px;">Team Details</h1>
           <h6 style="color: red;" class="err-msg">Please Fill Empty Details</h6>
         </div>
-        <form class="px-md-4 mb-4 my-box">
+        <form class="px-md-4 mb-4 my-box" onsubmit="return validateForm();">
           <div id="my-box-bg">
 
           </div>
