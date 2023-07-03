@@ -99,10 +99,25 @@ position: relative;
   background-color: #f2aa00;
   color:black;
  
- 
-
   
 }
+.sidebar img {
+  width:90px;
+padding:5px 10px 1px 10px; 
+
+  position: relative;
+  top:-130%;
+  align-items: center;
+}
+
+.sidebar img:hover{
+  /* text-shadow: white;
+  drop-shadow(offset-x offset-y blur-radius color); */
+  
+  filter: drop-shadow(-1px -10px 15px#f2aa00);
+ }
+
+
    /* .sidebar{
      border-top-right-radius: 10px;
     border-bottom-right-radius: 10px; 
