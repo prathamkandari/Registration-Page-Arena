@@ -32,6 +32,7 @@ margin-right: 180px;
     body{
       height: 100vh;
       overflow-x: hidden;
+      overflow-y: scroll !important;
       position: relative;
     }
   
@@ -167,12 +168,14 @@ padding:5px 10px 1px 10px;
   }
   @media (max-width:510px) {
     body{
-      overflow: hidden;
+
+      overflow-x: hidden;
+      overflow-y: scroll !important;
     }
     .glass-box{
       padding-left: 15px;
       padding-right: 15px;
-      height: 600px !important;
+      /* height: 600px !important; */
     }
   .valo{
     display: none;
@@ -377,7 +380,7 @@ padding:5px 10px 1px 10px;
     .glass-box{
       padding-left: 15px;
       padding-right: 15px;
-      height: 600px !important;
+      /* height: 600px !important; */
       justify-content: center !important;
       gap: 0rem;
     }
@@ -532,3 +535,28 @@ width: 500px;
     z-index: 100;
     }
   }
+
+
+  
+.csi-logo{
+  display: none;
+}
+@media (max-width:992px) {
+  .csi-logo{
+    display: block;
+    height: 10%;
+    margin-top: 10px;
+  }
+  .glass-box{
+    padding-top: 40px;
+    height: 90vh;
+  }
+  .title{
+    margin-top: 15px !important;
+  }
+}
+@media (max-width:510px) {
+  /* .glass-box{
+    height: 100% !important;
+  } */
+}

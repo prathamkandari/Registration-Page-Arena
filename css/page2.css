@@ -40,6 +40,7 @@ background: #333 100% 100%/cover url(https://wstatic-prod.pubg.com/web/live/main
     height: 100vh;
     overflow-x: hidden;
     position: relative;
+    overflow-y: scroll !important;
   }
 
   
@@ -288,7 +289,8 @@ padding:5px 10px 1px 10px;
     font-size: 0.54em;
   }
   body{
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
   .glass-box{
     padding-left: 15px;
@@ -365,5 +367,17 @@ background-size: cover !important;
   right: 10px;
   font-size: 45px !important;
   z-index: 100;
+  }
+}
+
+
+.csi-logo{
+  display: none;
+}
+@media (max-width:992px) {
+  .csi-logo{
+    display: block;
+    height: 10%;
+    margin-top: 30px;
   }
 }
