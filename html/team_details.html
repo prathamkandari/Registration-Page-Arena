@@ -2,6 +2,21 @@
 <html lang="en">
 
 <head>
+  <script>
+    function validateForm() {
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+          // Show error message
+          var errorMessage = document.getElementsByClassName("err-msg")[0];
+          errorMessage.style.display = "block";
+          return false;
+        }
+      }
+      return true; // All fields are filled
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="ThemeStarz">
@@ -11,44 +26,41 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../css/page2.css" type="text/css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../../html/assets/img/logo with circle.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/x-icon" href="../../../public_html/assets/imgs/logo.ico">
+
 
   <title>Registration Page-ARENA</title>
 </head>
 
 
-
 <body class="ts-theme-dark"
   style=" background-image: url('../images/wp6197715-pubg-mobile-lobby-wallpapers.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <a href="./team_profile.html"><i class="fa-solid fa-circle-arrow-left fa-xl"></i></a>
   <img src="../images/PUBG-Character-PNG-Picture.png" alt="" class="valo" style="z-index: 100;">
-  <!-- <div class="logo1">
-    <a href="https://upescsi.in/#home"><img src="../images/csi-white.png" alt="logo"></a>
-  </div> -->
-
   <div class="container-fluid h-100 d-flex align-items-center justify-content-center p-0 m-0">
     <div class="d-flex sidebar flex-column align-items-center justify-content-center">
 
-      <!-- <div class="logo">
+      <div class="logo">
         <a href="https://upescsi.in/#home"><img src="../images/csi-white.png" alt="logo"></a>
-      </div> -->
+      </div>
       <ul class="p-0">
         <li><a href="https://upescsi.in/#home">
-            <i class='bx bxs-home'></i>
-            <span class="text">Home</span>
-          </a></li>
-        <li><a href="page1.html">
-            <i class='bx bx-user'></i>
-            <span class="text">Personal Details</span>
-          </a></li>
-        <li><a href="page2.html" class="active" style="color: black;">
-            <i class='bx bxs-dice-4'></i>
-            <span class="text">Team Details</span>
-          </a></li>
-        <li><a href="page3.html">
-            <i class='bx bxs-wallet'></i>
-            <span class="text">Transaction</span>
-          </a></li>
+          <i class='bx bxs-home' ></i>
+          <span class="text">Home</span>
+        </a></li>
+        <li><a href="team_profile.html">
+          <i class='bx bx-user'></i>
+        <span class="text">Team Profile</span>
+        </a></li>
+        <li><a href="team_details.html" class="active" style="color: black;">
+          <i class='bx bxs-dice-4' ></i>
+          <span class="text">Team Details</span>
+        </a></li>
+        <li><a href="transaction.html" onclick="return validateForm();">
+          <i class='bx bxs-wallet' ></i>
+          <span class="text">Transaction</span>
+        </a></li>
       </ul>
     </div>
     <div class="container p-5 h-100 extra-padding d-flex flex-column align-items-center justify-content-center"
@@ -58,28 +70,20 @@
           <h1 class="mt-4 title" style=" font-size: 50px;">Team Details</h1>
           <h6 style="color: red;" class="err-msg">Please Fill Empty Details</h6>
         </div>
-        <form class="px-md-4 mb-4 my-box">
+        <form action="../Php/member.php" method="post" class="px-md-4 mb-4 my-box" onsubmit="return validateForm();">
           <div id="my-box-bg">
 
           </div>
 
           <div class="w-100 d-flex justify-content-start">
             <div id="container">
-              <button id="ready">NEXT</button>
-              <span></span>
-            </div>
-            <div id="container">
-              <!-- <a href="page1.html" style="margin-left: 10px; cursor: pointer; color:#f2aa00"> -->
-              <!-- Back -->
-              <!-- <button id="back">BACK</button> -->
-              <!-- </a> -->
+              <button id="ready" name="next">NEXT</button>
               <span></span>
             </div>
           </div>
         </form>
 
       </div>
-      <div class="glass-outer-box h-0"> <img src="../images/A1.png" alt="" class="drop"></div>
 
 
     </div>

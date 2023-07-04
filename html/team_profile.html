@@ -11,20 +11,20 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../css/page1.css" type="text/css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <link rel="icon" type="image/x-icon" href="../../../public_html/assets/imgs/logo.ico">
+  <!-- <link rel="icon" type="image/png" href="../../../public_html/assets/imgs/logo.png"> -->
 
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../../html/assets/img/logo with circle.png">
 
   <title>Registration Page-ARENA</title>
 </head>
 <img src="../images/reyna_valorant_png_by_kaelinshi_ddyjdmr-pre.png" alt="" class="valo">
-<!-- <div class="logo1">
-  <a href="https://upescsi.in/#home"><img src="../images/csi-white.png" alt="logo"></a>
-</div> -->
 
 <body class="ts-theme-dark" style=" background-image: url('../images/1282513.jpg');">
-
+  <a href="https://upescsi.in/#home"><i class="fa-solid fa-circle-arrow-left fa-xl"></i></a>
   <div class="container-fluid h-100 d-flex align-items-center justify-content-center p-0 m-0">
     <div class="d-flex sidebar flex-column align-items-center justify-content-center">
 
@@ -38,15 +38,16 @@
             <i class='bx bxs-home'></i>
             <span class="text">Home</span>
           </a></li>
-        <li><a href="page1.html" class="active" style="color: black;">
+        <li><a href="team_profile.html" class="active" style="color: black;">
             <i class='bx bx-user'></i>
-            <span class="text">Personal Details</span>
+            <span class="text">Team Profile</span>
           </a></li>
-        <li><a href="page2.html">
+        <li><a href="">
             <i class='bx bxs-dice-4'></i>
-            <span class="text">Team Details</span>
+
+            <span class="text" onclick="verify(event)">Team Details</span>
           </a></li>
-        <li><a href="page3.html">
+        <li><a href="transaction.html">
             <i class='bx bxs-wallet'></i>
             <span class="text">Transaction</span>
           </a></li>
@@ -57,16 +58,16 @@
       style="height: 100vh;">
       <section class="glass-box d-flex flex-column align-items-center" style="height: 100%; width: 80%;">
         <div style="text-align: center;">
-          <h1 class="mt-4 title" style="color: white; font-size: 50px;">Personal Details</h1>
+          <h1 class="mt-5 title" style="color: white; font-size: 50px;">Team Profile</h1>
           <h6 style="color: red;" id="err-msg1" onchange="verify(event)">Please Enter Team Name</h6>
         </div>
-        <form class="px-md-2 mb-4">
+        <form action="../Php/connect.php" method="post" class="px-md-2 mb-4" id="myform">
 
           <div class="mb-4">
 
 
             <div class="form__group field">
-              <input type="input" class="form__field" placeholder="Name" required="" id="teamName">
+              <input type="input" name="t_name" class="form__field" placeholder="Name" required="" id="teamName" pattern="[A-Za-z0-9]*">
               <label for="name" class="form__label">Team Name</label>
             </div>
 
@@ -105,7 +106,8 @@
           </div>
           <div class="mb-4 mt-5">
             <div class="button-borders">
-              <button class="primary-button valo-next-button" id="valo-next-button" onclick="verify(event)">NEXT
+              <button class="primary-button valo-next-button" name="verify" id="valo-next-button"
+                onclick="verify(event)">NEXT
               </button>
             </div>
           </div>

@@ -10,9 +10,12 @@
 
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../css/page3.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../../html/assets/img/logo with circle.png">
+  <link rel="icon" type="image/x-icon" href="../../../public_html/assets/imgs/logo.ico">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>Registration Page-ARENA</title>
 </head>
@@ -23,12 +26,17 @@
   <div id="myModal" class="modal">
 
     <!-- Modal content -->
-    <div class="modal-content pt-1">
+    <div class="modal-content pt-1" style=" transform: scale(0.8);">
       <span class="close" id="close-btn" style="text-align: right; color: black;">&times;</span>
-      <div id="modal-img" style="text-align: center;"></div>
+      <div id="modal-img" style="text-align: center">
+        <h1>Akshat Nigam</h1>
+        <h3>akshatnigam84-1@okhdfcbank</h3>
+        <h3>8005493058</h3><img src="../images/qr.jpeg" />
+      </div>
     </div>
 
   </div>
+  <a href="./team_details.html"><i class="fa-solid fa-circle-arrow-left fa-xl"></i></a>
   <img src="../images/pngfind.com-cyberpunk-png-6766060-removebg-preview.png" alt="" class="valo" style="z-index: 99;">
   <div class="container-fluid h-100 d-flex align-items-center justify-content-center p-0 m-0">
     <div class="d-flex sidebar flex-column align-items-center justify-content-center">
@@ -41,17 +49,18 @@
             <i class='bx bxs-home'></i>
             <span class="text">Home</span>
           </a></li>
-        <li><a href="page1.html">
+        <li><a href="team_profile.html">
             <i class='bx bx-user'></i>
-            <span class="text">Personal Details</span>
+            <span class="text">Team Profile</span>
           </a></li>
-        <li><a href="page2.html">
+        <li><a href="team_details.html">
             <i class='bx bxs-dice-4'></i>
             <span class="text">Team Details</span>
           </a></li>
-        <li><a href="page3.html" class="active" style="color: black;">
+        <li><a href="transaction.html" class="active" style="color: black;">
             <i class='bx bxs-wallet'></i>
             <span class="text">Transaction</span>
+            
           </a></li>
       </ul>
     </div>
@@ -60,11 +69,11 @@
       <div class="glass-box d-flex flex-column align-items-center" style="width: 80%;">
         <div class=" mb-3" style="text-align: center;">
           <h1 class="mt-4 title" style="color: white; font-size: 50px;">Transaction</h1>
-          <h7 style="color: white;" id="bill"></h7><br/>
-          <h10 style="color: red;" id="billtwo"></h10>
+          <h5 style="color: white;" id="bill"></h5>
+          <h8 style="color: red;" id="billtwo"></h8>
         </div>
 
-        <form class="px-md-4 mb-4 my-box">
+        <form class="px-md-4 mb-4 my-box" action="../Php/transaction.php" method="post" enctype="multipart/form-data">
           <div class="mb-3 roe-d d-flex flex-column" style="color: #bcbcbc;font-size: 20px;">
 
             <h6 class="mb-2 pb-1 ques" style="font-size: 30px;">Mode of Payment: </h6>
@@ -94,7 +103,7 @@
 
 
             <div class="form__group field">
-              <input type="input" class="form__field" placeholder="Name" required="">
+              <input type="input" class="form__field" placeholder="Name" required="" name="trans">
               <label for="name" class="form__label">Transaction ID</label>
             </div>
 
@@ -102,8 +111,8 @@
           <div class="mb-3 roe-d">
             <h6 class="mb-2 pb-1 ques" style="font-size: 30px;color: #bcbcbc;">Upload Payment Screenshot</h6>
             <div class="box">
-              <input type="file" name="file-7[]" id="file-7" class="inputfile inputfile-6"
-                data-multiple-caption="{count} files selected" style="display:none;" required="" />
+              <input type="file" id="file-7" class="inputfile inputfile-6"
+                data-multiple-caption="{count} files selected" style="display:none;" required="" name="filedata" />
               <label for="file-7" class="file-upload"><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg"
                     width="20" height="17" viewBox="0 0 20 17">
                     <path
@@ -111,18 +120,19 @@
                   </svg> Choose a file&hellip;</strong></label>
             </div>
           </div>
-        </form>
-        
-        <div class="mb-4">
-          <button type="SUBMIT" onclick="openPopup()">SUBMIT</button>
+          <div class="mb-4">
+            <button type="SUBMIT" onclick="openPopup()" name="SUBMIT" onsubmit="return false">SUBMIT</button>
 
-          <div class="popup" id="popup">
-            <i class='bx bx-check-circle'></i>
-            <h2>Registration Successful</h2>
-            <button type="button" onclick="closePopup()">ok</button>
+            <div class="popup" id="popup">
+              <i class='bx bx-check-circle'></i>
+              <h2>Registration Successful</h2>
+              <button type="button" onclick="closePopup()">ok</button>
 
+            </div>
           </div>
-        </div>
+        </form>
+
+
       </div>
       <!-- <div class="glass-outer-box h-0"> <img src="../images/A1.png" alt="" class="drop"></div> -->
 
@@ -132,7 +142,7 @@
   </div>
   <script>
     window.onload = function () {
-      showQR("Paytm")
+      // showQR("Paytm")
       billShow();
     };
     'use strict';

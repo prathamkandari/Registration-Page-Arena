@@ -43,7 +43,7 @@ function verify(event) {
     localStorage.setItem("numberMembers", allValue[2]);
     console.log(allValue)
 
-    window.location.href = "page2.html";
+    window.location.href = `team_details.html?num=${allValue[2]}`
 
   } else {
     document.getElementById('err-msg1').style.display = "block"
@@ -55,92 +55,98 @@ function verify(event) {
 /* Page2 */
 function addData() {
 
-  let numberPlayers = localStorage.getItem('numberMembers');
+  const numberPlayers = new URLSearchParams(window.location.search).get('num');
+  const game = new URLSearchParams(window.location.search).get('game');
+
+
   console.log(numberPlayers)
-  let game = localStorage.getItem('game')
-  document.getElementById("my-box-bg").innerHTML += `<form action="">
+  document.getElementById("my-box-bg").innerHTML += `
 <div class="row two-space mb-4 name-em">
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="" name="tl_name" type="text" required="">
     <span class="text">Team Leader Name</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="" name="tl_email" type="text" required="">
     <span class="text">Team Leader Email</span>
   </div>
 </div>
 <div class="row two-space mb-4 name-em">
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required=""name="tl_id" type="text" required="">
     <span class="text">Team Leader ${game} ID</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="" name="tl_rank" type="text" required="">
     <span class="text">Team Leader ${game} Rank</span>
   </div>
 </div>
 <div class="row two-space ">
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="" name="tl_contact" type="text" required="">
     <span class="text">Team Leader Contact</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="" type="text" name="tl_sap" required="">
     <span class="text">Team Leader Sap Id</span>
     <p class="msg" style="color: #f2aa00; font-size: small;">*Enter 0 if you are not from UPES</p>
   </div>
 </div>
 <div class="mb-4 w-100">
   <div class="inputBox">
-    <input required="" type="text" required="" class="w-100">
+    <input required="" type="text" name="tl_college" required="" class="w-100">
     <span class="text">Team Leader college Name</span>
   </div>
 </div>
 <div class="mb-5 w-100">
   <div class="inputBox">
-    <input required="" type="text" required="" class="w-100">
+    <input required="" type="text" name="tl_discord" required="" class="w-100">
     <span class="text">Team Leader Discord ID</span>
   </div>
-</div>
-</form>`
-  for (let i = 0; i < numberPlayers - 1; i++) {
-    console.log("dhdgd")
+</div>`
 
-    document.getElementById("my-box-bg").innerHTML += `<form action="">
+
+
+  for (let i = 0; i < numberPlayers - 1; i++) {
+
+
+    document.getElementById("my-box-bg").innerHTML += `
+
 <div class="row two-space mb-4 name-em">
+
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="required" type="text" name="m${i + 1}_name">
     <span class="text">Member ${i + 1} name</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required="required" type="text" name="m${i + 1}_email">
     <span class="text">Member  ${i + 1} email</span>
   </div>
 </div>
 <div class="row two-space mb-4 name-em">
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required=""  type="text" name="m${i + 1}_id">
     <span class="text">Member ${i + 1} ${game} ID</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required=""  type="text" name="m${i + 1}_rank">
     <span class="text">Member  ${i + 1} ${game} Rank</span>
   </div>
 </div>
 <div class="row two-space ">
   <div class="inputBox">
-    <input required="" type="text" required="">
-    <span class="text">Member  ${i + 1} Contact</span>
+    <input required=""  type="text" name="m${i + 1}_contact">
+    <span class="text">Member ${i + 1} Contact</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" required="">
+    <input required=""  type="text" name="m${i + 1}_sap">
     <span class="text">Member ${i + 1} Sap Id</span>
     <p class="msg" style="color: #f2aa00; font-size: small;">*Enter 0 if you are not from UPES</p>
   </div>
 </div>
 <div class="mb-5 w-100">
   <div class="inputBox">
-    <input required="" type="text" required="" class="w-100">
+    <input required="" type="text"  class="w-100" name="m${i + 1}_college">
     <span class="text">Member ${i + 1} college Name</span>
   </div>
 </div>
@@ -149,35 +155,25 @@ function addData() {
 }
 
 
-
-
-
 /* page3 */
 function displayPayment() {
   return document.querySelector('input[name="paymentOptions"]:checked').value;
 }
-function showQR(payment) {
-  if (payment === "Paytm") {
-    document.getElementById('modal-img').innerHTML = '<h1>PayTM</h1><img src="../images/gpay1.jpg" />'
-  }
-  else
-    if (payment === "Phonepe") {
-      document.getElementById('modal-img').innerHTML = '<h1>PhonePe</h1><img src="../images/gpay1.jpg" />'
-    }
-    else {
-      document.getElementById('modal-img').innerHTML = '<h1>Google Pay</h1><img src="../images/gpay1.jpg" />'
-    }
-}
+
 
 
 function billShow() {
-  let game = localStorage.getItem('game');
+  const game = new URLSearchParams(window.location.search).get('game');
+
   if (game === "BGMI") {
-    document.getElementById("bill").innerHTML = "Total Amount: <del>₹200</del>   ₹120"
+    document.getElementById("bill").innerHTML = "Total Amount: <del>₹160</del>   ₹120"
     document.getElementById("billtwo").innerHTML = "<em>*Amount is not Refundable</em>";
   }
   else {
-    document.getElementById("bill").innerHTML = "Total Amount: <del>₹200</del>   ₹160"
-    document.getElementById("billtwo").innerHTML = "*Amount is Refundable"
+    document.getElementById("bill").innerHTML = "Total Amount: <del>₹200</del>   ₹150"
+    document.getElementById("billtwo").innerHTML = "<em>*Amount is not Refundable</em>";
   }
+  // else {
+  //   document.getElementById("billtwo").innerHTML = "Please fill all the details";
+  // }
 }
