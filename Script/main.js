@@ -63,11 +63,11 @@ function addData() {
   document.getElementById("my-box-bg").innerHTML += `
 <div class="row two-space mb-4 name-em">
   <div class="inputBox">
-    <input required="" name="tl_name" type="text" required="">
+    <input required="" name="tl_name" type="text" required="" pattern="[A-Za-z0-9\s ]*" minlength="4">
     <span class="text">Team Leader Name</span>
   </div>
   <div class="inputBox">
-    <input required="" name="tl_email" type="text" required="">
+    <input required="" name="tl_email" type="text" required="" minlength="6">
     <span class="text">Team Leader Email</span>
   </div>
 </div>
@@ -83,24 +83,24 @@ function addData() {
 </div>
 <div class="row two-space ">
   <div class="inputBox">
-    <input required="" name="tl_contact" type="text" required="">
+    <input required="" name="tl_contact" type="text" required="" minlength="10" maxlength="10">
     <span class="text">Team Leader Contact</span>
   </div>
   <div class="inputBox">
-    <input required="" type="text" name="tl_sap" required="">
+    <input required="" type="text" name="tl_sap" required="" maxlength="10">
     <span class="text">Team Leader Sap Id</span>
     <p class="msg" style="color: #f2aa00; font-size: small;">*Enter 0 if you are not from UPES</p>
   </div>
 </div>
 <div class="mb-4 w-100">
   <div class="inputBox">
-    <input required="" type="text" name="tl_college" required="" class="w-100">
+    <input required="" type="text" name="tl_college" required="" class="w-100" pattern="[A-Za-z\s]*" minlength="3">
     <span class="text">Team Leader college Name</span>
   </div>
 </div>
 <div class="mb-5 w-100">
   <div class="inputBox">
-    <input required="" type="text" name="tl_discord" required="" class="w-100">
+    <input required="" type="text" name="tl_discord" required="" class="w-100" minlength="3">
     <span class="text">Team Leader Discord ID</span>
   </div>
 </div>`
@@ -115,11 +115,11 @@ function addData() {
 <div class="row two-space mb-4 name-em">
 
   <div class="inputBox">
-    <input required="required" type="text" name="m${i + 1}_name">
+    <input required="required" type="text" name="m${i + 1}_name" pattern="[A-Za-z0-9\s]*" minlength="4">
     <span class="text">Member ${i + 1} name</span>
   </div>
   <div class="inputBox">
-    <input required="required" type="text" name="m${i + 1}_email">
+    <input required="required" type="text" name="m${i + 1}_email" minlength="6">
     <span class="text">Member  ${i + 1} email</span>
   </div>
 </div>
@@ -135,18 +135,18 @@ function addData() {
 </div>
 <div class="row two-space ">
   <div class="inputBox">
-    <input required=""  type="text" name="m${i + 1}_contact">
+    <input required=""  type="text" name="m${i + 1}_contact" required="" minlength="10" maxlength="10">
     <span class="text">Member ${i + 1} Contact</span>
   </div>
   <div class="inputBox">
-    <input required=""  type="text" name="m${i + 1}_sap">
+    <input required=""  type="text" name="m${i + 1}_sap" maxlength="10">
     <span class="text">Member ${i + 1} Sap Id</span>
     <p class="msg" style="color: #f2aa00; font-size: small;">*Enter 0 if you are not from UPES</p>
   </div>
 </div>
 <div class="mb-5 w-100">
   <div class="inputBox">
-    <input required="" type="text"  class="w-100" name="m${i + 1}_college">
+    <input required="" type="text"  class="w-100" name="m${i + 1}_college" pattern="[A-Za-z\s]*" minlength="3">
     <span class="text">Member ${i + 1} college Name</span>
   </div>
 </div>
@@ -166,11 +166,11 @@ function billShow() {
   const game = new URLSearchParams(window.location.search).get('game');
 
   if (game === "BGMI") {
-    document.getElementById("bill").innerHTML = "Total Amount: <del>₹160</del>   ₹120"
+    document.getElementById("bill").innerHTML = "Total Amount: ₹160"
     document.getElementById("billtwo").innerHTML = "<em>*Amount is not Refundable</em>";
   }
   else {
-    document.getElementById("bill").innerHTML = "Total Amount: <del>₹200</del>   ₹150"
+    document.getElementById("bill").innerHTML = "Total Amount: ₹200"
     document.getElementById("billtwo").innerHTML = "<em>*Amount is not Refundable</em>";
   }
   // else {
