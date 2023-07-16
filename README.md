@@ -1,6 +1,7 @@
 <div align="center">
 <h1>REGISTRATION PAGE FOR ARENA 2.0</h1>
 </div>
+<h2>Visit at: https://prathamkandari.github.io/Registration-Page-Arena-Live/</h2>
 <h3>Page 1:
   
 ![](.img/Page1.png)
